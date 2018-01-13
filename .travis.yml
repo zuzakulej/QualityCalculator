@@ -32,11 +32,10 @@ before_script:
   - adb shell input keyevent 82 &
 
 script:
-  - chmod +x ./gradlew build jacocoTestReport
+  - chmod +x ./gradlew
   - ./gradlew test
   - ./gradlew connectedAndroidTest
   - ./gradlew connectedCheck
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-#script: "./travis-build.sh"
