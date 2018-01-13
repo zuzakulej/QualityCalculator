@@ -33,6 +33,7 @@ before_script:
 
 script:
   - chmod +x ./gradlew
+  - ./gradlew jacocoTestReport
   - ./gradlew test
   - ./gradlew connectedAndroidTest
   - ./gradlew connectedCheck
