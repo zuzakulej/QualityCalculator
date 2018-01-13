@@ -2,7 +2,7 @@ language: android
 
 jdk: oraclejdk8
 
-sudo: required
+sudo: false
 
 android:
   components:
@@ -26,7 +26,10 @@ before_script:
   - adb shell input keyevent 82 &
 
 script:
-  - chmod +x ./gradlew build connectedCheck
+  - chmod +x ./gradlew build jacocoTestReport connectedCheck
   - ./gradlew test
   - ./gradlew connectedAndroidTest
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 #script: "./travis-build.sh"
