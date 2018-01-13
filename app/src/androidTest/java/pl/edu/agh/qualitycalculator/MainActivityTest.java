@@ -43,13 +43,23 @@ public class MainActivityTest {
     }
 
     @Test
-    public void testMul(){
+    public void testMul() {
         //fail("Not implemented yet!");
 
         onView(withId(R.id.etNum1)).perform(click()).perform(typeText("4"));
         onView(withId(R.id.etNum2)).perform(click()).perform(typeText("4"));
         onView(withId(R.id.btnMult)).perform(click());
         onView(withId(R.id.tvResult)).check(matches(withText("4.0 multiplied by 4.0 gives value 16.0")));
+    }
+
+    @Test
+    public void testDiv(){
+        //fail("Not implemented yet!");
+
+        onView(withId(R.id.etNum1)).perform(click()).perform(typeText("4"));
+        onView(withId(R.id.etNum2)).perform(click()).perform(typeText("4"));
+        onView(withId(R.id.btnDiv)).perform(click());
+        onView(withId(R.id.tvResult)).check(matches(withText("4.0 divided by 4.0 gives value 1.0")));
     }
 }
 
