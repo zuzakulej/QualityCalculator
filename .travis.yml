@@ -2,7 +2,7 @@ language: android
 
 jdk: oraclejdk8
 
-sudo: false
+sudo: required
 
 android:
   components:
@@ -27,4 +27,4 @@ before_script:
 script: 
   - ./gradlew test
   - ./gradlew connectedAndroidTest
-script: "./travis-build.sh"
+#script: "./travis-build.sh"
